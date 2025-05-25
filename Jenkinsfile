@@ -26,9 +26,13 @@ pipeline {
                     if (blockedList.contains(params.USERNAME)) {
                         echo "User '${params.USERNAME} is BLOCKED!"
                     }
-
-                    echo "User '${params.USERNAME} is allowed and not blocked'"
                 }
+            }
+        }
+
+        stage("Successful") {
+            steps {
+                echo "User '${params.USERNAME}' is allowed and not blocked'"
             }
         }
     }
