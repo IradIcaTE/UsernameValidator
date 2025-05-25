@@ -19,7 +19,7 @@ pipeline {
                     def userList = env.USERS.split(',')
                     def blockedList = env.BLOCKED.split(',')
 
-                    if (!userList.contains(param.USERNAME)) {
+                    if (!userList.contains(params.USERNAME)) {
                         echo "User '${params.USERNAME} is not in the allowed list"
                     }
 
